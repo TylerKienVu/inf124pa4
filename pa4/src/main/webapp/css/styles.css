@@ -1,0 +1,173 @@
+body, html {
+	/*height: 100%;*/
+	width: 100%;
+}
+
+.navbar {
+}
+
+.nav-link {
+    font-size: 2vh;
+}
+
+.navbar-brand {
+    font-size: 3vh;
+}
+
+.parallax { 
+    height: 80%; 
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-divider {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 30vh;
+	width: 100%;
+	background-color: white;
+	word-wrap: break-word;
+}
+
+.divider-text {
+	text-align: center;
+	font-style: italic;
+	font-size: 4vh;
+	margin-right: 10vw;
+	margin-left: 10vw;
+}
+
+.landing-content-container {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	top: 20vh;
+}
+
+/*index.html*/
+
+#home-landing-image {
+	background-image: url("../content/rock.jpg");
+}
+
+#home-image-one {
+	background-image: url("../content/rock2.jpg");
+}
+
+#home-image-two {
+	background-image: url("../content/rock3.jpg")
+}
+
+#landing-button {
+	width: auto;
+	height: 10vh;
+	text-align: center;
+	opacity: 0.9;
+	font-size: 4vh;
+}
+
+/*product.html*/
+
+tr {
+	text-align: center;
+}
+
+.product-image {
+	max-width: 30vh;
+	max-height: 30vh;
+	width: auto;
+	height: auto;
+}
+
+.product-table-title {
+    margin-top: 10vh;
+    margin-left: 2vw;
+}
+
+.product-table {
+	margin-top: 5vh;
+}
+
+#product-landing-image {
+	background-image: url("../content/gems.jpg");
+}
+
+
+/*team.html*/
+
+#team-landing-image {
+	background-image: url("../content/team.jpg");
+}
+
+#team-image-one {
+	background-image: url("../content/team2.jpg");
+}
+
+/*product details*/
+
+.product-detail-container {
+	display: flex;
+	position: relative;
+	top: 10vh;
+	font-size: 3vh;
+	flex-direction: column;
+	word-wrap: break-word;
+	width: 100%;
+}
+
+.product-detail-image {
+	margin-left: 10vw;
+	margin-top: 5vh;
+	margin-bottom: 5vh;
+	max-width: 40vw;
+	max-height: 50vh;
+	width: auto;
+	height: auto;
+}
+
+.product-description {
+	list-style-type: none;
+	padding: 0;
+	word-wrap: break-word;
+	margin-left: 10vw;
+}
+
+#order-div {
+	font-size: 2vh;
+	margin-top: 20vh;
+	margin-left: 5vw;
+	margin-right: 5vw;
+	margin-bottom: 10vh;
+}
+
+#cart-button-container {
+    margin-top: 5vh;
+    text-align: center;
+}
+
+#cart-alert-container {
+    text-align: center;
+}
+
+#price-container {
+    margin-left: 5vw;
+    margin-top: 10vh;
+}
+
+#add-to-cart {
+    width: 20vw;
+    height: 5vh;
+    font-size: 2vh;
+    margin-bottom: 15vh;
+}
+
+#product-list {
+    text-align: center;
+}
