@@ -18,6 +18,6 @@
       <servlet-name>Jersey REST Service</servlet-name>
       <!-- This is the URL pattern for the target path segment that will precede the path segment specified
       for the resource-->
-      <url-pattern>/v1/api/*</url-pattern>
+      <url-pattern>/tylerkv/api/*</url-pattern>
     </servlet-mapping>
 </web-app>
