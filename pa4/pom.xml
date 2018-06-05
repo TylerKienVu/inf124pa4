@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>uci</groupId>
-  <artifactId>pa3</artifactId>
+  <artifactId>pa4</artifactId>
   <version>1.0</version>
   <packaging>war</packaging>
 
-  <name>pa3 Maven Webapp</name>
+  <name>pa4</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -41,6 +41,11 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>5.1.46</version>
     </dependency>
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-mapper-asl</artifactId>
+      <version>1.9.13</version>
+    </dependency>    
   </dependencies>
 
   <build>
