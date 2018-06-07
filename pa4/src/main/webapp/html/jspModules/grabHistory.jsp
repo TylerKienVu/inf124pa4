@@ -1,4 +1,4 @@
-<%@ page import="javax.ws.rs.core.MediaType"%>
+<%@ page import="javax.ws.rs.core.MediaType" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.io.*" %>
 <%@ page import="javax.servlet.*" %>

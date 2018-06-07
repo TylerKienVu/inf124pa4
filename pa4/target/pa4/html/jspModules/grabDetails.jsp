@@ -1,16 +1,27 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.io.*" %>
-<%@ page import="tylerkv.rest.db.DatabaseConnector" %>
-<%@ page import="tylerkv.rest.db.DatabaseUtils" %>
 <%@ page import="javax.servlet.*" %>
 <%@ page import="java.util.*" %>
+<%@ page import="tylerkv.classes.RestClient" %>
+<%@ page import="javax.ws.rs.client.WebTarget" %>
+<%@ page import="tylerkv.rest.model.Rock" %>
+<%@ page import="org.codehaus.jackson.type.TypeReference" %>
+<%@ page import="org.codehaus.jackson.map.*" %>
+<%@ page import="javax.ws.rs.core.MediaType" %>
 
 <%
     String rock_id = request.getParameter("rock_id");
     if(rock_id != null) {
-        Connection connection = DatabaseConnector.getConnection();
-        String sql = "SELECT * FROM rocks WHERE rock_id = " + rock_id;
-        ResultSet resultSet = DatabaseUtils.retrieveQueryResults(connection, sql);
+        WebTarget target = RestClient.getClient();
+        
+        String jsonResponse =
+                target.path("tylerkv").path("api").path("rocks").path(rock_id).
+                request().
+                accept(MediaType.APPLICATION_JSON).
+                get(String.class);
+        ObjectMapper objectMapper = new ObjectMapper();
+            
+        Rock currentRock = objectMapper.readValue(jsonResponse, new TypeReference<Rock>(){});
         
         //customerSession handling
         HttpSession customerSession = request.getSession(true);
@@ -34,32 +45,18 @@
             customerSession.setAttribute(historyKey, historyList);
         }      
         
-        if (resultSet != null) {
-            try {
-                while (resultSet.next()) { 
     %>
-                    <img class="product-detail-image" src="../content/rock<%out.println(rock_id);%>.jpg">
-                    <ul class="product-description">
-                        <li><strong>Rock Number: </strong><%out.println(rock_id);%></li>
-                        <li><strong>Color: </strong><%out.println(resultSet.getString("color"));%></li>
-                        <li><strong>Quantity: </strong><%out.println(resultSet.getString("quantity_per_order"));%></li>
-                        <li><strong>Price Per Order: </strong><%out.println(resultSet.getString("price_per_order"));%></li>
-                        <li><strong>Description: </strong><%out.println(resultSet.getString("description"));%></li>
-                    </ul>
-                    <div id="cart-button-container">
-                        <button id="add-to-cart" type="button" class="btn btn-primary">Add to Cart</button>
-                    </div>
-               <% }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    connection.close();
-                } catch (SQLException e ) {
-                    e.printStackTrace();
-                }
-            }
-        }        
-    }
-
-%>
+        <img class="product-detail-image" src="../content/rock<%out.println(rock_id);%>.jpg">
+        <ul class="product-description">
+            <li><strong>Rock Number: </strong><%out.println(rock_id);%></li>
+            <li><strong>Color: </strong><%out.println(currentRock.getColor());%></li>
+            <li><strong>Quantity: </strong><%out.println(currentRock.getQuantityPerOrder());%></li>
+            <li><strong>Price Per Order: </strong><%out.println(currentRock.getPricePerOrder());%></li>
+            <li><strong>Description: </strong><%out.println(currentRock.getDescription());%></li>
+        </ul>
+        <div id="cart-button-container">
+            <button id="add-to-cart" type="button" class="btn btn-primary">Add to Cart</button>
+        </div>
+    <%
+       }
+        %>
