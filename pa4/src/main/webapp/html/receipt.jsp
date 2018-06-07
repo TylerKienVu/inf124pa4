@@ -45,14 +45,8 @@
                     </tr>
                 </thead>
                 <tbody id="product-list">	    		
-                    <%-- Grab all of the rocks in the db --%>
+                    <jsp:include page="jspModules/grabCart.jsp" flush="true" />
                 </tbody>
             </table>   
-            <div id="price-container">
-                <h5>Total Price</h5>
-                <div class="price-display">
-                      $0.00
-                </div>    
-            </div>
 	</body>
 </html>

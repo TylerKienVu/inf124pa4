@@ -18,6 +18,10 @@
         <servlet-name>AddToCart</servlet-name>
         <servlet-class>tylerkv.servlets.AddToCart</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Order</servlet-name>
+        <servlet-class>tylerkv.servlets.CreateOrder</servlet-class>
+    </servlet>
     <servlet-mapping>
       <servlet-name>Jersey REST Service</servlet-name>
       <!-- This is the URL pattern for the target path segment that will precede the path segment specified
@@ -28,4 +32,8 @@
         <servlet-name>AddToCart</servlet-name>
         <url-pattern>/cart</url-pattern>
     </servlet-mapping>    
+    <servlet-mapping>
+        <servlet-name>Order</servlet-name>
+        <url-pattern>/order</url-pattern>
+    </servlet-mapping>
 </web-app>
