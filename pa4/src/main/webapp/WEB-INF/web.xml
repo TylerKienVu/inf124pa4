@@ -14,10 +14,18 @@
       </init-param>
       <load-on-startup>1</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>AddToCart</servlet-name>
+        <servlet-class>tylerkv.servlets.AddToCart</servlet-class>
+    </servlet>
     <servlet-mapping>
       <servlet-name>Jersey REST Service</servlet-name>
       <!-- This is the URL pattern for the target path segment that will precede the path segment specified
       for the resource-->
       <url-pattern>/tylerkv/api/*</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddToCart</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>    
 </web-app>

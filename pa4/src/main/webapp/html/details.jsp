@@ -37,6 +37,7 @@
         </nav>
         <div class="product-detail-container">
             <div id="cart-alert-container"></div>
+            <jsp:include page="jspModules/grabDetails.jsp" flush="true" />
         </div>
     </body>
 </html>

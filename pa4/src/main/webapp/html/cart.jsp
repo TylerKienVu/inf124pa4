@@ -45,34 +45,13 @@
                     </tr>
                 </thead>
                 <tbody id="product-list">	    		
-                    <%-- Grab all of the rocks in the db --%>
+                    <jsp:include page="jspModules/grabCart.jsp" flush="true" />                  
                 </tbody>
             </table>   
-            <div id="price-container">
-                <h5>Total Price</h5>
-                <div class="price-display">
-                      $0.00
-                </div>    
-            </div>
+
             <div id="order-div">
                     <form action="../order" method="post" id="purchase-form" class="needs-validation" novalidate>
                       <h5>Order Details</h5>
-<!--                      <div class="form-row">
-                        <div class="form-group col-md-3">
-                          <label for="inputItem">Item Number</label>
-                          <input type="text" pattern="^([1-9]|10)$" class="form-control" id="inputItem" name="rockNum" placeholder="Rock Number 1-10" onblur="dynamicPrice()" required>
-                          <div class="invalid-feedback">
-                            Please choose a number between 1-10
-                          </div>
-                        </div>	
-                        <div class="form-group col-md-3">
-                          <label for="inputNumberOfOrders">Number of Orders</label>
-                          <input type="text" class="form-control" name="quantity" id="inputNumberOfOrders" pattern="^[1-9]|[1-9][0-9]$" value=1 onblur="dynamicPrice()" required>
-                          <div class="invalid-feedback">
-                                    Please choose a number between 1-99
-                          </div>
-                        </div>			    	  	
-                      </div>		  -->
                       <div class="form-row">
                         <div class="form-group col-md-3">
                           <label for="inputFirstName">First Name</label>
@@ -186,10 +165,6 @@
                                     Please provide a valid Zip Code
                           </div>
                         </div>
-                      </div>	
-                      <h5>Total Price</h5>
-                      <div class="form-group price-display">
-                            $0.00
                       </div>	  	  	  
                       <button type="submit" class="btn btn-primary">Place Order</button>
                     </form>		

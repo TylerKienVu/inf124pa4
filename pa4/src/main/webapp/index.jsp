@@ -48,7 +48,7 @@
                 </tr>
             </thead>
             <tbody id="product-view-history">   	
-                <%-- Grab last 5 visited rocks from db here --%>
+                <jsp:include page="html/jspModules/grabHistory.jsp" flush="true" />
             </tbody>
         </table>
         
@@ -64,9 +64,8 @@
                 </tr>
             </thead>
             <tbody id="product-list">	    		
-                <%-- Grab all of the rocks in the db --%>
+                <jsp:include page="html/jspModules/grabRocks.jsp" flush="true" />
             </tbody>
-        </table>        
-        
+        </table>         
     </body>
 </html>
